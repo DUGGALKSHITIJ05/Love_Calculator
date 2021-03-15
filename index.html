@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="icon" href="https://img.icons8.com/plasticine/100/000000/like--v1.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ranchers|Roboto|Abel|Anton|Bebas Neue|Ubuntu|Fjalla One">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="container">
+     <div class="head">
+         <h1 class="heading">Welcome to Love Calculator 
+             <img src="https://img.icons8.com/plasticine/100/000000/like--v1.png" class="img"/></h1>
+
+        <p class="para">Just Type Your Names In the Calculator Below and Press Calculate and Wait for Results</p>
+     </div>
+    <div class="calc">
+        <div class="resultbox">
+            <div class="names" id="names">
+                <h3 class="both" id="name1"></h3> <img src="https://img.icons8.com/dusk/64/000000/like.png" class="img2 hide" id="img2"/> <h3 class="both" id="name2"></h3>
+            </div>
+            <div class="content" id="content">
+                <h4 class="text" id="text">
+                 <h1 class="perc" id="perc"></h1>
+                </h4>
+            </div>
+            <div class="before" id="before">
+                <h1 class="start" id="start">Lets See What Are Your Results and Bonding With Your Partner</h1>
+            </div>
+            <div class="after">
+                <p class="message" id="message">
+                    
+                </p>
+            </div>
+        </div>
+        <div class="calculator" id="calc">
+            <h1 class="main">Type Names in the box below.</h1>
+            <h2 class="secondmain">
+                Press Continue Once You Are Done
+            </h2>
+            <form onsubmit="return false">
+                <input type="text" name="yourname" class="input1" id="yourname" placeholder="Your Name" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Your Name'">
+                <img src="https://img.icons8.com/emoji/50/000000/heart-suit.png" class="img3"/>
+                <input type="text" name="yourpartnersname" class="input2" id="yourpartnersname" placeholder="Your Partners Name" onfocus="this.placeholder=''"
+                onblur="this.placeholder='Your Partners Name'">
+               <button type="submit" class="btn" onclick="Calc()">Continue</button>
+            </form>
+           
+        </div>
+    </div>
+ </div>
+
+ <script>
+    const Calc = () => {
+   var name1 = document.getElementById('yourname').value;
+   var name2 = document.getElementById('yourpartnersname').value;
+   var percLove = Math.random();
+   percLove = Math.floor(percLove * 100)+1;
+     
+     if(name1 === "" || name2 === ""){
+         document.getElementById('start').innerHTML = "Please Fill The Empty Feild For Calculator To Work"
+     }
+      else{
+         document.getElementById('start').innerHTML= "";
+         document.getElementById('name1').innerHTML= name1;
+         document.getElementById('img2').style.display = "block";
+         document.getElementById('name2').innerHTML= name2;
+         document.getElementById('text').innerHTML= "Your Love Percentage Is";
+         document.getElementById('perc').innerHTML = percLove + "%";
+         Message(percLove);
+         reset();
+    }
+   
+   
+}
+function reset(){
+    document.getElementById('yourname').value = null;
+   document.getElementById('yourpartnersname').value = null;
+   document.getElementById('start').innerHTML= "";
+}
+function Message(percLove) {
+    if(percLove <= 100 && percLove>90){
+             document.getElementById('message').innerHTML = "You Both Are Made For Each Other. Just Always try to understand each other at every point and You Both Will Always stay happy with each other. You Both Are Love Birds So Always Try To Spread Love WhereEver You Go. May God Bless You Both"
+         } else if(percLove <= 90 && percLove>60){
+            document.getElementById('message').innerHTML = "You Both can do well with each other. Just dont let ego or any misunderstanding ruin this relationship. You both if try well can even make this percentage 100. So Just take care of each other's choices. May God Bless You Both"
+         } else if(percLove <= 60 && percLove>30){
+            document.getElementById('message').innerHTML = "You Both can try well to match up with each other's expectations. Try To make your partner happy at each point. Try to explain what You want in this Relationship and make efforts at each point to Increase This Percentage. May God Bless You Both"
+         } else{
+            document.getElementById('message').innerHTML = "You Both Dont Ever stop trying. Do Communicate Respectfully and Be Flexible at Each Point And Give this Relation Time. Try to Understand Each Other and Always Try to Find a way to Fix it. Never Go for Other Option. May God Bless You Both."
+         }
+
+    }
+
+
+</script>
+
+
+
+</body>
+</html>
+<!-- function calc(){
+    //         document.getElementById('start').innerHTML = "";
+    //         var percLove = Math.random();
+    //         percLove = Math.floor(percLove*100)+1;
+    //         document.getElementById('text').innerHTML= "Your Love Percentage Is";
+    //         document.getElementById('perc').innerHTML = percLove + "%";
+    //         document.getElementById('img2').style.display='block';
+    //         document.getElementById('name1').innerHTML= name1;
+    //         document.getElementById('name2').innerHTML= name2;
+    //    }
+    //    if(name1 || name2 ===""){
+    
+    //     }else{
+    //         calc();
+    //     }
+       
+       -->
